@@ -1,0 +1,17 @@
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        server_version: '5.7'
+        host: "%env(MYSQL_HOST)%"
+        port: 3306
+        user: "%env(MYSQL_USER)%"
+        password: "%env(MYSQL_PASS)%"
+        dbname: "%env(MYSQL_DB)%"
+        types:
+            uuid: App\Shared\DoctrineType\UuidType
+
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
