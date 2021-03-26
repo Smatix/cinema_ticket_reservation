@@ -1,0 +1,49 @@
+version:  '3.0'
+
+services:
+  web:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    image: apache-php7.4
+    container_name: cinema_web
+    volumes:
+      - .:/var/www/html/cinema_ticket_reservation
+    ports:
+      - '8000:80'
+    networks:
+      - main
+
+  db:
+    image: mysql:5.7
+    container_name: cinema_db
+    restart: always
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASS}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASS}
+      MYSQL_DATABASE: ${MYSQL_DB}
+    volumes:
+      - ./var/docker/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - main
+
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    container_name: cinema_phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASS}
+    networks:
+      - main
+
+networks:
+  main:
+  
