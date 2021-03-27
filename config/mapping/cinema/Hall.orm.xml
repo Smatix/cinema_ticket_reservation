@@ -1,0 +1,8 @@
+<doctrine-mapping>
+    <entity name="App\Cinema\Entity\Hall" table="cinema_hall">
+        <id name="id" type="uuid" column="id">
+            <generator strategy="NONE"/>
+        </id>
+        <field name="seats" type="integer"/>
+    </entity>
+</doctrine-mapping>

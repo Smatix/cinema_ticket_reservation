@@ -24,6 +24,8 @@ services:
         resource: '../src/UI/REST/Controller/'
         tags: [ 'controller.service_arguments' ]
 
+    App\Shared\EventBus\EventBus: '@App\Shared\EventBus\MessengerEventBus'
+
     _instanceof:
         App\Shared\Command\CommandHandler:
             tags:

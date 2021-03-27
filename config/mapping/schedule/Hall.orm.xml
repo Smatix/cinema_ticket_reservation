@@ -1,0 +1,7 @@
+<doctrine-mapping>
+    <entity name="App\Schedule\Domain\Hall" table="schedule_hall">
+        <id name="id" type="uuid" column="id">
+            <generator strategy="NONE"/>
+        </id>
+    </entity>
+</doctrine-mapping>
