@@ -100,6 +100,9 @@
     "phpstan/phpstan-doctrine": {
         "version": "0.12.33"
     },
+    "phpstan/phpstan-symfony": {
+        "version": "0.12.21"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },

@@ -24,6 +24,7 @@
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^0.12.82",
         "phpstan/phpstan-doctrine": "^0.12.33",
+        "phpstan/phpstan-symfony": "^0.12.21",
         "symfony/phpunit-bridge": "^5.2"
     },
     "config": {
