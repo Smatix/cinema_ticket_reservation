@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Shared\Infrastructure\Uuid;
+namespace App\Shared\Uuid;
 
 use Symfony\Component\Uid\Uuid as SymfonyUuid;
 

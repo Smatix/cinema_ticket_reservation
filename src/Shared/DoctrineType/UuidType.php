@@ -2,7 +2,7 @@
 
 namespace App\Shared\DoctrineType;
 
-use App\Shared\Infrastructure\Uuid\Uuid;
+use App\Shared\Uuid\Uuid;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
 use Doctrine\DBAL\Types\Type;

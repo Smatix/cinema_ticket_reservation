@@ -24,5 +24,16 @@ services:
         resource: '../src/UI/REST/Controller/'
         tags: [ 'controller.service_arguments' ]
 
+    _instanceof:
+        App\Shared\Command\CommandHandler:
+            tags:
+                - { name: messenger.message_handler, bus: command.bus }
+        App\Shared\Query\QueryHandler:
+            tags:
+                - { name: messenger.message_handler, bus: query.bus }
+        App\Shared\Event\EventListener:
+            tags:
+                - { name: messenger.message_handler, bus: event.bus }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
