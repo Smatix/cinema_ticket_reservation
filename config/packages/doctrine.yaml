@@ -27,3 +27,21 @@ doctrine:
                 dir: '%kernel.project_dir%/config/mapping/schedule'
                 prefix: 'App\Schedule\Domain'
                 alias: Schedule
+            Reservation:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mapping/reservation'
+                prefix: 'App\Reservation\Domain'
+                alias: Reservation
+            Period:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mapping/period'
+                prefix: 'League\Period'
+                alias: Period
+            Shared:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/mapping/shared'
+                prefix: 'App\Shared'
+                alias: Shared

@@ -25,6 +25,8 @@ services:
         tags: [ 'controller.service_arguments' ]
 
     App\Shared\EventBus\EventBus: '@App\Shared\EventBus\MessengerEventBus'
+    App\Schedule\Domain\Repository\ShowRepositoryInterface: '@App\Schedule\Infrastructure\Repository\ShowRepository'
+    App\Reservation\Domain\Repository\ReservationRepositoryInterface: '@App\Reservation\Infrastructure\Repository\ReservationRepository'
 
     _instanceof:
         App\Shared\Command\CommandHandler:

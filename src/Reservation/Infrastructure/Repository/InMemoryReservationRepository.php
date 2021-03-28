@@ -14,7 +14,7 @@ class InMemoryReservationRepository implements ReservationRepositoryInterface
      */
     private array $reservations;
 
-    public function getById(Uuid $id): Reservation
+    public function getByIdOrThrowNotFound(Uuid $id): Reservation
     {
         foreach ($this->reservations as $reservation) {
             if ($reservation->getId()->equals($id)) {

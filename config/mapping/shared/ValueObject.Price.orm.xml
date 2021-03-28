@@ -1,0 +1,5 @@
+<doctrine-mapping>
+    <embeddable name="App\Shared\ValueObject\Price">
+        <field name="amount" type="float" />
+    </embeddable>
+</doctrine-mapping>

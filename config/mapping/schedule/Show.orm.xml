@@ -1,0 +1,12 @@
+<doctrine-mapping>
+    <entity name="App\Schedule\Domain\Show" table="schedule_show">
+        <id name="id" type="uuid" column="id">
+            <generator strategy="NONE"/>
+        </id>
+        <embedded name="period" class="League\Period\Period" use-column-prefix="false"/>
+        <embedded name="price" class="App\Shared\ValueObject\Price"/>
+        <many-to-one field="hall" target-entity="App\Schedule\Domain\Hall">
+            <join-column name="hall_id" referenced-column-name="id" />
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

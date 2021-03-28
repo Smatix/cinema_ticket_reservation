@@ -1,0 +1,11 @@
+<doctrine-mapping>
+    <entity name="App\Reservation\Domain\Entity\Seat" table="reservation_seat">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="number" type="integer"/>
+        <many-to-one field="reservation" target-entity="App\Reservation\Domain\Reservation" inversed-by="seats">
+            <join-column name="reservation_id" referenced-column-name="id" />
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

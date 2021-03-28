@@ -7,7 +7,7 @@ use App\Shared\Uuid\Uuid;
 
 interface ReservationRepositoryInterface
 {
-    public function getById(Uuid $id): Reservation;
+    public function getByIdOrThrowNotFound(Uuid $id): Reservation;
 
     /**
      * @param Uuid $showId
