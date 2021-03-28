@@ -1,1 +1,1 @@
-php vendor/bin/phpstan analyse src tests --level=8 --memory-limit=256M
+docker exec cinema_web php vendor/bin/phpstan analyse src tests --level=8 --memory-limit=256M
