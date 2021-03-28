@@ -3,5 +3,5 @@ parameters:
         container_xml_path: var/cache/dev/App_KernelDevDebugContainer.xml
     doctrine:
         objectManagerLoader: tests/object-manager.php
-    autoload_files:
+    bootstrapFiles:
         - bin/.phpunit/phpunit-8.5-0/vendor/autoload.php
