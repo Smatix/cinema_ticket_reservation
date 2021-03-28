@@ -7,9 +7,15 @@ use App\Reservation\Domain\Reservation;
 use App\Shared\Exception\NotFoundException;
 use App\Shared\Repository\MysqlRepository;
 use App\Shared\Uuid\Uuid;
+use Doctrine\ORM\EntityManagerInterface;
 
 class ReservationRepository extends MysqlRepository implements ReservationRepositoryInterface
 {
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        parent::__construct($entityManager, Reservation::class);
+    }
+
     public function getByIdOrThrowNotFound(Uuid $id): Reservation
     {
         /** @var Reservation|null $reservation */

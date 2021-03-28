@@ -5,7 +5,7 @@
         </id>
         <embedded name="pricePerSeat" class="App\Shared\ValueObject\Price"/>
         <field name="showId" type="uuid"/>
-        <field name="reservationDate" type="datetime"/>
+        <field name="reservationDate" type="datetime_immutable"/>
         <field name="isPaid" type="boolean"/>
         <one-to-many field="seats" target-entity="App\Reservation\Domain\Entity\Seat" mapped-by="reservation" orphanRemoval="true">
             <cascade>

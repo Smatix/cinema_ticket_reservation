@@ -7,7 +7,7 @@ use App\Reservation\Domain\Reservation;
 class Seat
 {
     private int $id;
-    private Reservation $reservation;
+    private ?Reservation $reservation;
     private int $number;
 
     public function __construct(int $number)

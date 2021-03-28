@@ -3,13 +3,12 @@
 namespace App\Shared\Repository;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityRepository;
 use Doctrine\Persistence\ObjectRepository;
 
 abstract class MysqlRepository
 {
-    /**
-     * @var ObjectRepository<mixed>
-     */
+    /** @var EntityRepository */
     protected $repository;
 
     protected EntityManagerInterface $em;
@@ -18,6 +17,8 @@ abstract class MysqlRepository
     {
         $this->em = $entityManager;
         /** @var class-string<mixed> $model */
-        $this->repository = $this->em->getRepository($model);
+        /** @var EntityRepository $repository*/
+        $repository = $this->em->getRepository($model);
+        $this->repository = $repository;
     }
 }

@@ -8,9 +8,15 @@ use App\Shared\Exception\NotFoundException;
 use App\Shared\Repository\MysqlRepository;
 use App\Shared\Uuid\Uuid;
 use DateTimeImmutable;
+use Doctrine\ORM\EntityManagerInterface;
 
 class ShowRepository extends MysqlRepository implements ShowRepositoryInterface
 {
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        parent::__construct($entityManager, Show::class);
+    }
+
     public function getByIdOrThrowNotFound(Uuid $id): Show
     {
         /** @var Show|null $show */

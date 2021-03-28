@@ -6,6 +6,8 @@ use App\Reservation\Domain\Entity\Seat;
 use App\Shared\Uuid\Uuid;
 use App\Shared\ValueObject\Price;
 use DateTimeImmutable;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 class Reservation
 {
@@ -15,9 +17,9 @@ class Reservation
     private Price $pricePerSeat;
     private bool $isPaid;
     /**
-     * @var Seat[] $seats
+     * @var Collection<int, Seat> $seats
      */
-    private array $seats = [];
+    private Collection $seats;
 
     public function __construct(Uuid $id, Uuid $showId, DateTimeImmutable $reservationDate, Price $pricePerSeat)
     {
@@ -26,6 +28,7 @@ class Reservation
         $this->reservationDate = $reservationDate;
         $this->pricePerSeat = $pricePerSeat;
         $this->isPaid = false;
+        $this->seats = new ArrayCollection();
     }
 
     public function getId(): Uuid
@@ -43,9 +46,10 @@ class Reservation
      */
     public function getSeatsNumbers(): array
     {
-        return array_map(function (Seat $seat) {
+        $seatsNumbers = $this->seats->map(function (Seat $seat) {
             return $seat->getNumber();
-        }, $this->seats);
+        });
+        return $seatsNumbers->toArray();
     }
 
     /**

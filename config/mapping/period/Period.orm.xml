@@ -1,6 +1,6 @@
 <doctrine-mapping>
     <embeddable name="League\Period\Period">
-        <field name="startDate" type="datetime" />
-        <field name="endDate" type="datetime" />
+        <field name="startDate" type="datetime_immutable" />
+        <field name="endDate" type="datetime_immutable" />
     </embeddable>
 </doctrine-mapping>
