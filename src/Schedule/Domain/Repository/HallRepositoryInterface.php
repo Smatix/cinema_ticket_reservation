@@ -3,10 +3,11 @@
 namespace App\Schedule\Domain\Repository;
 
 use App\Schedule\Domain\Hall;
+use App\Shared\Uuid\Uuid;
 
 interface HallRepositoryInterface
 {
-    public function getByIdOrThrowNotFound(string $id): Hall;
+    public function getByIdOrThrowNotFound(Uuid $id): Hall;
 
     public function save(Hall $hall): void;
 

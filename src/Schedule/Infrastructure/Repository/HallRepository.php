@@ -6,6 +6,7 @@ use App\Schedule\Domain\Hall;
 use App\Schedule\Domain\Repository\HallRepositoryInterface;
 use App\Shared\Exception\NotFoundException;
 use App\Shared\Repository\MysqlRepository;
+use App\Shared\Uuid\Uuid;
 use Doctrine\ORM\EntityManagerInterface;
 
 class HallRepository extends MysqlRepository implements HallRepositoryInterface
@@ -15,7 +16,7 @@ class HallRepository extends MysqlRepository implements HallRepositoryInterface
         parent::__construct($entityManager, Hall::class);
     }
 
-    public function getByIdOrThrowNotFound(string $id): Hall
+    public function getByIdOrThrowNotFound(Uuid $id): Hall
     {
         /** @var Hall|null $hall */
         $hall = $this->repository->find($id);

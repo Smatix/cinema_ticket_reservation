@@ -91,6 +91,9 @@
     "laminas/laminas-zendframework-bridge": {
         "version": "1.2.0"
     },
+    "league/period": {
+        "version": "4.11.0"
+    },
     "phpstan/extension-installer": {
         "version": "1.1.0"
     },
