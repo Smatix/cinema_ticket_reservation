@@ -35,4 +35,9 @@ class Show
     {
         return $this->hall;
     }
+
+    public function getPrice(): Price
+    {
+        return $this->price;
+    }
 }

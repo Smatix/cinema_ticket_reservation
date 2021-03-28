@@ -2,7 +2,7 @@
 
 namespace App\Tests\Schedule\Unit\Domain\Validator;
 
-use App\Schedule\Domain\Exception\InvalidPolicyException;
+use App\Shared\Exception\InvalidPolicyException;
 use App\Schedule\Domain\Policy\GapBetweenPolicy;
 use App\Schedule\Domain\Policy\NoOverlapsPolicy;
 use App\Schedule\Domain\Repository\ShowRepositoryInterface;

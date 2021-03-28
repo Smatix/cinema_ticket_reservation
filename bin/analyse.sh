@@ -1,1 +1,1 @@
-php vendor/bin/phpstan analyse src tests --level=8
+php vendor/bin/phpstan analyse src tests --level=8 --memory-limit=256M

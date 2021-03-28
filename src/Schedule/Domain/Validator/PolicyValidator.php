@@ -2,7 +2,7 @@
 
 namespace App\Schedule\Domain\Validator;
 
-use App\Schedule\Domain\Exception\InvalidPolicyException;
+use App\Shared\Exception\InvalidPolicyException;
 use App\Schedule\Domain\Policy\Policy;
 use App\Schedule\Domain\Repository\ShowRepositoryInterface;
 use App\Schedule\Domain\Show;

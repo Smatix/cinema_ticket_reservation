@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Schedule\Domain\Exception;
+namespace App\Shared\Exception;
 
 use Exception;
 

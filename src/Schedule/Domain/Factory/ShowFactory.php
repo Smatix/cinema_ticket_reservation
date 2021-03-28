@@ -24,7 +24,7 @@ class ShowFactory
      * @param Uuid $hallId
      * @param float $price
      * @return Show
-     * @throws \App\Schedule\Domain\Exception\InvalidPolicyException
+     * @throws \App\Shared\Exception\InvalidPolicyException
      * @throws \League\Period\Exception
      */
     public function create(Uuid $id, DateTimeImmutable $start, DateTimeImmutable $end, Uuid $hallId, float $price): Show
